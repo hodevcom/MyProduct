@@ -9,8 +9,9 @@ import {
 } from './productsSlice';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Product, ProductFilter } from './types';
+import { SagaIterator } from 'redux-saga';
 
-function* handleFetchProducts(action: PayloadAction<ProductFilter>) {
+function* handleFetchProducts(action: PayloadAction<ProductFilter>): SagaIterator {
   try {
     const { page, search, minPrice, maxPrice, sort } = action.payload;
     const params = new URLSearchParams({
@@ -35,7 +36,7 @@ function* handleFetchProducts(action: PayloadAction<ProductFilter>) {
   }
 }
 
-function* addProductSaga(action: PayloadAction<Product>) {
+function* addProductSaga(action: PayloadAction<Product>): SagaIterator {
   try {
     const res: Response = yield call(fetch, '/api/products', {
       method: 'POST',
