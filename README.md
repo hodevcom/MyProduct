@@ -1,3 +1,6 @@
+## Example
+Open [https://myproduct.hodev.com.br/](https://myproduct.hodev.com.br/) with your browser to see the result.
+
 ## Iniciar o projeto o .env
 ```bash
 npm i
@@ -11,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador.
 
 ## Criar o .env
 .env
