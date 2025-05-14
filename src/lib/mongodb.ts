@@ -6,20 +6,18 @@ if (!MONGODB_URI) {
   throw new Error('❌ Defina MONGODB_URI no .env.local');
 }
 
-// Extensão do tipo global para incluir 'mongoose'
 declare global {
-  // eslint-disable-next-line no-var
   var mongoose: {
     conn: Mongoose | null;
     promise: Promise<Mongoose> | null;
   } | undefined;
 }
 
-let cached = global.mongoose;
-
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+if (!global.mongoose) {
+  global.mongoose = { conn: null, promise: null };
 }
+
+const cached = global.mongoose; // Agora TypeScript sabe que não é undefined
 
 export async function connectDB(): Promise<Mongoose> {
   if (cached.conn) return cached.conn;
