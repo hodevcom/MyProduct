@@ -1,5 +1,5 @@
 ## Example
-Open [https://myproduct.hodev.com.br/](https://myproduct.hodev.com.br/) with your browser to see the result.
+Veja o exemplo deste repositório [https://myproduct.hodev.com.br/](https://myproduct.hodev.com.br/)
 
 ## Iniciar o projeto o .env
 ```bash
