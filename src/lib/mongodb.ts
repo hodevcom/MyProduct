@@ -17,7 +17,7 @@ if (!global.mongoose) {
   global.mongoose = { conn: null, promise: null };
 }
 
-const cached = global.mongoose; // Agora TypeScript sabe que não é undefined
+const cached = global.mongoose;
 
 export async function connectDB(): Promise<Mongoose> {
   if (cached.conn) return cached.conn;

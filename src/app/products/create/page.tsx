@@ -33,7 +33,7 @@ const ProductForm = () => {
   const handleSubmit = (values: typeof initialValues, { resetForm }: any) => {
     try {
       const newProduct: Product = {
-        id: Math.floor(Math.random() * 100000), // ou use uuid
+        id: Math.floor(Math.random() * 100000),
         ...values,
         price: parseFloat(values.price),
       };
