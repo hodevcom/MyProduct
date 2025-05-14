@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from '@redux-saga/core/effects';
 import {
   fetchProductsFailure,
   fetchProductsRequest,
@@ -9,7 +9,7 @@ import {
 } from './productsSlice';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Product, ProductFilter } from './types';
-import { SagaIterator } from 'redux-saga';
+import { SagaIterator } from '@redux-saga/core';
 
 function* handleFetchProducts(action: PayloadAction<ProductFilter>): SagaIterator {
   try {
