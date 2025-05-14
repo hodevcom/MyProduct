@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
       if (maxPrice) filter.price.$lte = Number(maxPrice);
     }
   
-    let sortOption: any = {};
+    const sortOption: any = {};
     if (sortParam) {
       const [field, direction] = sortParam.split('_');
       sortOption[field] = direction === 'desc' ? -1 : 1;
@@ -46,8 +46,8 @@ export async function GET(request: NextRequest) {
         totalPages: Math.ceil(total / limit),
       },
     });
-  } catch (error) {
-    return NextResponse.json({ error: 'Erro ao buscar produtos' }, { status: 500 });
+  } catch (error instanceof Error) {
+    return NextResponse.json({ error: 'Erro ao buscar produtos: ' + error.toString() }, { status: 500 });
   }
 }
 
@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
           
     const product = await Product.create(body);
     return NextResponse.json(product, { status: 201 });
-  } catch (error) {
+  } catch (error instanceof Error) {
     return NextResponse.json({ error: 'Erro ao criar produto' }, { status: 500 });
   }
 }
