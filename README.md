@@ -23,4 +23,4 @@ MONGODB_URI=mongodb+srv://PROVEDOR:FUvqv0kcgGrpDyQD@cluster0.0ellnzm.mongodb.net
     - [Redux] - para gerenciamento dos estados
     - [Redux Saga] - para integrar via API com generators
     - [Formik e Yup] - para gerenciar os formulários e obrigatoriedades no front-end
-    - [MongoDB] - para consultar base de dado não relacional dos produtos
+    - [MongoDB] - para consultar base de dados não relacional dos produtos
